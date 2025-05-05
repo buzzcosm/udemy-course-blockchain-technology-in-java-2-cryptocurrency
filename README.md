@@ -1,6 +1,10 @@
 # Cryptocurrency Project
 
+[Udemy course - Blockchain](https://www.udemy.com/course/learn-blockchain-technology-in-java)
+
 ## Description
+
+Implementation of a cryptocurrency using blockchain technology.
 
 ## Topics
 
