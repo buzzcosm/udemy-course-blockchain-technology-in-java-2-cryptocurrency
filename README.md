@@ -31,3 +31,7 @@ Here's a breakdown of how ECDH works:
 The shared secret key can then be used to encrypt subsequent communications using a symmetric-key cipher. ECDH offers advantages like smaller key sizes for the same security level and resistance to certain attacks.
 
 Elliptic-curve Diffie–Hellman (ECDH) is a key agreement protocol that allows two parties, each having an elliptic-curve public–private key pair, to establish a shared secret over an insecure channel. This shared secret may be directly used as a key, or to derive another key.
+
+### Bouncy Castle
+
+[Bouncy Castle for Java LTS](https://www.bouncycastle.org/download/bouncy-castle-java-lts/)
