@@ -36,3 +36,7 @@ Elliptic-curve Diffie–Hellman (ECDH) is a key agreement protocol that allows t
 
 - [Bouncy Castle for Java LTS](https://www.bouncycastle.org/download/bouncy-castle-java-lts/)
 - [Bouncy Castle Provider - Maven Dependency](https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on/1.80)
+
+## Transaction
+
+**UTXO** (Unspent Transaction Output)
