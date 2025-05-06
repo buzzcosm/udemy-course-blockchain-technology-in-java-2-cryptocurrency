@@ -1,17 +1,26 @@
 package com.buzzcosm.cryptocurrency.blockchain;
 
 import com.buzzcosm.cryptocurrency.cryptocurrency.CryptographyHelper;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
 public class Block {
 
-    private int id;
+    private final int id;
+    private final Long timestamp;
+    private final String transaction;
+
     private int nonce;
-    private Long timestamp;
+
+    @Setter
+    @Getter
     private String hash;
+
+    @Setter
+    @Getter
     private String previousHash;
-    private String transaction;
 
     public Block(int id, String transaction, String previousHash) {
         this.id = id;
@@ -22,32 +31,16 @@ public class Block {
     }
 
     public void generateHash() {
-        String dataToHash = Integer.toString(id) +
+        String dataToHash = id +
                 previousHash +
-                Long.toString(timestamp) +
-                Integer.toString(nonce) +
+                timestamp +
+                nonce +
                 transaction;
         hash = CryptographyHelper.generateHash(dataToHash);
     }
 
     public void incrementNonce() {
         this.nonce++;
-    }
-
-    public String getPreviousHash() {
-        return previousHash;
-    }
-
-    public void setPreviousHash(String previousHash) {
-        this.previousHash = previousHash;
-    }
-
-    public String getHash() {
-        return hash;
-    }
-
-    public void setHash(String hash) {
-        this.hash = hash;
     }
 
     @Override
