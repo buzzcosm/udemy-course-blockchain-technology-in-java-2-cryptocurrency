@@ -19,22 +19,23 @@ public class Block {
     private final Long timestamp;
     private final String transaction;
 
-    @Setter
     @Getter
+    @Setter
     private String hash;
 
-    @Setter
     @Getter
+    @Setter
     private String previousHash;
 
-    private List<Transaction> transactions;
+    @Getter
+    private final List<Transaction> transactions;
 
     public Block(int id, String transaction, String previousHash) {
         this.id = id;
         this.transaction = transaction;
         this.previousHash = previousHash;
         this.timestamp = new Date().getTime();
-        transactions = new ArrayList<>();
+        this.transactions = new ArrayList<>();
         generateHash();
     }
 

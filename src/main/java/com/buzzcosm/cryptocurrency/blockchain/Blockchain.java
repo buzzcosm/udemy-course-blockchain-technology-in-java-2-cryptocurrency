@@ -1,7 +1,6 @@
 package com.buzzcosm.cryptocurrency.blockchain;
 
 import com.buzzcosm.cryptocurrency.cryptocurrency.TransactionOutput;
-import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.LinkedList;
