@@ -10,14 +10,15 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 public class Block {
 
-    private final int id;
-    private int nonce;
+    private final String id;
     private final Long timestamp;
-    private final String transaction;
+
+    private int nonce;
 
     @Getter
     @Setter
@@ -30,9 +31,9 @@ public class Block {
     @Getter
     private final List<Transaction> transactions;
 
-    public Block(int id, String transaction, String previousHash) {
-        this.id = id;
-        this.transaction = transaction;
+    public Block(String previousHash) {
+        this.id = UUID.randomUUID().toString();
+
         this.previousHash = previousHash;
         this.timestamp = new Date().getTime();
         this.transactions = new ArrayList<>();
@@ -44,7 +45,7 @@ public class Block {
                 previousHash +
                 timestamp +
                 nonce +
-                transaction;
+                transactions;
         hash = CryptographyHelper.generateHash(dataToHash);
     }
 
@@ -75,9 +76,11 @@ public class Block {
     public String toString() {
         return "Block{" +
                 "id=" + id +
+                ", timestamp=" + timestamp +
+                ", nonce=" + nonce +
                 ", hash='" + hash + '\'' +
                 ", previousHash='" + previousHash + '\'' +
-                ", transaction='" + transaction + '\'' +
+                ", transactions=" + transactions +
                 '}';
     }
 }
